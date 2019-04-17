@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import LocalizedStrings from 'react-localization';
 import './App.css';
 import StartScreen from './StartScreen.js';
+import LoginScreen from './LoginScreen.js';
 import DataSheet_localizationSheet from './DataSheet_localizationSheet.js';
 
 
@@ -20,7 +21,6 @@ export default class App extends Component {
     this.state = {
       currentScreen: 'start',
       currentScreenProps: {},
-      screenFormatId: '',
       screenTransitionForward: true,
     }
     this.screenHistory = [ {...this.state} ];
@@ -168,13 +168,15 @@ export default class App extends Component {
         deviceInfo: {
           screenFormatId: this.state.screenFormatId
         },
-        ds_activeLang: this.dataSlots['ds_activeLang'],
+        'ds_activeLang': this.dataSlots['ds_activeLang'],
       };
       switch (screenId) {
         default:
           return null;
         case 'start':
           return (<StartScreen {...screenProps} />)
+        case 'login':
+          return (<LoginScreen {...screenProps} />)
       }
     }
 

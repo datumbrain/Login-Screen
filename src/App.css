@@ -1,3 +1,42 @@
+.font-helvetica {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+}
+@media (min-resolution: 120dpi) {
+  .font-helvetica {
+    font-family: 'Helvetica', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+  }
+}
+
+/* Font copied in place by React Studio. Please check that your license for this font file permits embedding on a website. */
+@font-face {
+  font-family: 'Montserrat-SemiBold';
+  src: url('fonts/Montserrat-SemiBold.ttf');
+}
+
+.font-montserratSemiBold {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+}
+@media (min-resolution: 120dpi) {
+  .font-montserratSemiBold {
+    font-family: 'Montserrat-SemiBold', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+  }
+}
+
+/* Font copied in place by React Studio. Please check that your license for this font file permits embedding on a website. */
+@font-face {
+  font-family: 'Montserrat-Bold';
+  src: url('fonts/Montserrat-Bold.ttf');
+}
+
+.font-montserratBold {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+}
+@media (min-resolution: 120dpi) {
+  .font-montserratBold {
+    font-family: 'Montserrat-Bold', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+  }
+}
+
 .App { /* Base font style */
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
   font-size: 15.1px;
@@ -123,6 +162,8 @@
   left: 0;
   top: 0;
   width: 100%;
+  height: 63px;
+  min-height: 63px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
   font-size: 18px;
 }
@@ -136,7 +177,7 @@
   width: 100%;
   text-align: center;
   padding: 4px;
-  margin-top: 14px;
+  margin-top: 13px;
 }
 
 .App .navBar .backBtn {
@@ -181,16 +222,15 @@
   top: 0;
   width: 100%;
   height: 100%;
+  pointer-events: none;
 }
 
 .App .layoutFlow {
   position: relative;
-  left: 0;
-  top: 0;
   width: 100%;
-  float: left;
+  pointer-events: none;
 }
-.App .layoutFlow:after {
+.App .layoutFlow:before {  /* Prevent margin collapse */
   content: "";
   display: table;
   clear: both;
@@ -206,18 +246,16 @@
   left: 0;
   top: 0;
   width: 100%;
+  height: 100%;
+  pointer-events: none;
 }
 .App .foreground {
   position: absolute;
   left: 0;
   top: 0;
   width: 100%;
-}
-.App .compContent {
-  position: relative;
-  left: 0;
-  top: 0;
-  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }
 
 .App ul {
@@ -244,17 +282,32 @@
 .App .hasNestedComps .layoutFlow {
   position: relative;
 }
-.App .hasNestedComps .foreground {
-  position: absolute;
-}
 .App .bottomAlignedContent {
   position: absolute;
   bottom: 0;
   width: 100%;
 }
 
+.App .blockInputOverlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: auto;
+  z-index: 99999999;
+}
 
-/* Narrowest size for this element's responsive layout */
+.StartScreen {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
   .StartScreen > .background > .elBackground {
     position: absolute;
     left: 0px;
@@ -263,31 +316,287 @@
     width: 100.0%;
     height: 100%;
   }
-@media (min-width: 568px) {
-  .StartScreen > .background > .elBackground {
+
+/* This component has a fixed-size layout */
+  .ButtonsButton {
+    min-height: 36px;
+    overflow: hidden;
+    width: 100%; /* This component was designed using a width of 143px */
+    height: 100%;
+  }
+  .ButtonsButton > .background > .containerMinHeight {
+    min-height: 36px;
+  }
+
+
+  .ButtonsButton > .foreground > .elBaseWShadow {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 142px;
+    height: 36px;
+  }
+
+
+  .ButtonsButton > .foreground > .elLogin {
+    position: absolute;
+    left: 47px;
+    top: 10px;
+    width: 47px;
+    height: 21px;
+  }
+
+/* This component has a fixed-size layout */
+  .RegisterBtn {
+    min-height: 36px;
+    overflow: hidden;
+    width: 100%; /* This component was designed using a width of 143px */
+    height: 100%;
+  }
+  .RegisterBtn > .background > .containerMinHeight {
+    min-height: 36px;
+  }
+
+
+  .RegisterBtn > .foreground > .elOverridesBlueOutline {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 142px;
+    height: 36px;
+  }
+
+
+  .RegisterBtn > .foreground > .elRegitser {
+    position: absolute;
+    left: 39px;
+    top: 10px;
+    width: 65px;
+    height: 21px;
+  }
+
+.LoginScreen {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+  .LoginScreen > .background > .elBackground {
+    position: absolute;
     left: 0px;
     right: 0px;
     top: 0px;
     width: 100.0%;
     height: 100%;
   }
-}
-@media (min-width: 768px) {
-  .StartScreen > .background > .elBackground {
+
+
+  .LoginScreen > .screenFgContainer > .foreground > .elRectangle {
+    position: absolute;
     left: 0px;
-    right: 0px;
     top: 0px;
-    width: 100.0%;
-    height: 100%;
+    width: 640px;
+    height: 800px;
   }
-}
-@media (min-width: 1024px) {
-  .StartScreen > .background > .elBackground {
-    left: 0px;
-    right: 0px;
-    top: 0px;
-    width: 100.0%;
-    height: 100%;
+
+
+  .LoginScreen > .screenFgContainer > .foreground > .elOutline {
+    position: absolute;
+    left: 164px;
+    top: 344px;
+    width: 311px;
+    height: 36px;
   }
+
+
+  .LoginScreen > .screenFgContainer > .foreground > .elSuche {
+    position: absolute;
+    left: 175px;
+    top: 355px;
+    width: 18px;
+    height: 14px;
+  }
+
+
+  .LoginScreen > .screenFgContainer > .foreground > .elSuche2 {
+    position: absolute;
+    left: 448px;
+    top: 356px;
+    width: 15px;
+    height: 10px;
+  }
+
+.LoginScreen .elButtonsButton {
+  overflow: hidden;
 }
+
+.LoginScreen .elButtonsButton.hasNestedComps > div {
+  overflow: hidden;
+  position: relative;
+}
+
+
+
+  .LoginScreen > .screenFgContainer > .foreground > .elButtonsButton {
+    position: absolute;
+    left: 333px;
+    top: 484px;
+    width: 143px;
+    height: 36px;
+  }
+  .LoginScreen > .screenFgContainer > .foreground > .elButtonsButton > .background > .containerMinHeight {
+    min-height: 36px;
+  }
+
+
+.LoginScreen .elRegisterBtn {
+  overflow: hidden;
+}
+
+.LoginScreen .elRegisterBtn.hasNestedComps > div {
+  overflow: hidden;
+  position: relative;
+}
+
+
+
+  .LoginScreen > .screenFgContainer > .foreground > .elRegisterBtn {
+    position: absolute;
+    left: 164px;
+    top: 484px;
+    width: 143px;
+    height: 36px;
+  }
+  .LoginScreen > .screenFgContainer > .foreground > .elRegisterBtn > .background > .containerMinHeight {
+    min-height: 36px;
+  }
+
+
+
+  .LoginScreen > .screenFgContainer > .foreground > .elOutline2 {
+    position: absolute;
+    left: 164px;
+    top: 421px;
+    width: 311px;
+    height: 36px;
+  }
+
+
+  .LoginScreen > .screenFgContainer > .foreground > .elSuche3 {
+    position: absolute;
+    left: 174px;
+    top: 433px;
+    width: 20px;
+    height: 11px;
+  }
+
+
+  .LoginScreen > .screenFgContainer > .foreground > .elSuche4 {
+    position: absolute;
+    left: 448px;
+    top: 434px;
+    width: 15px;
+    height: 10px;
+  }
+
+
+  .LoginScreen > .screenFgContainer > .foreground > .elCheckboxChecked {
+    position: absolute;
+    left: 167px;
+    top: 540px;
+    width: 16px;
+    height: 16px;
+  }
+
+
+  .LoginScreen > .screenFgContainer > .foreground > .elRememberme {
+    position: absolute;
+    left: 196px;
+    top: 543px;
+    width: 92px;
+    height: 9px;
+  }
+
+
+  .LoginScreen > .screenFgContainer > .foreground > .elForgotpassword {
+    position: absolute;
+    left: 365px;
+    top: 541px;
+    width: 110px;
+    height: 13px;
+  }
+
+
+  .LoginScreen > .screenFgContainer > .foreground > .elLoginToYourAccoun {
+    position: absolute;
+    left: 159px;
+    top: 277px;
+    width: 238px;
+    height: 30px;
+  }
+
+
+  .LoginScreen > .screenFgContainer > .foreground > .elImgCopy {
+    position: absolute;
+    left: 670px;
+    top: 186px;
+    width: 576px;
+    height: 453px;
+  }
+
+
+  .LoginScreen > .screenFgContainer > .foreground > .elEmail {
+    position: absolute;
+    left: 161px;
+    top: 320px;
+    width: 46px;
+    height: 19px;
+  }
+
+
+  .LoginScreen > .screenFgContainer > .foreground > .elPassword {
+    position: absolute;
+    left: 161px;
+    top: 398px;
+    width: 65px;
+    height: 19px;
+  }
+
+
+  .LoginScreen > .screenFgContainer > .foreground > .elLogo {
+    position: absolute;
+    left: 107px;
+    top: 24px;
+    width: 28px;
+    height: 28px;
+  }
+
+
+  .LoginScreen > .screenFgContainer > .foreground > .elFINDAJOBFINDACA {
+    position: absolute;
+    left: 401px;
+    top: 38px;
+    width: 520px;
+    height: 19px;
+  }
+
+
+  .LoginScreen > .screenFgContainer > .foreground > .elYourEmail {
+    position: absolute;
+    left: 203px;
+    top: 357px;
+    width: 78px;
+    height: 20px;
+  }
+
+
+  .LoginScreen > .screenFgContainer > .foreground > .elYourEmailCopy {
+    position: absolute;
+    left: 203px;
+    top: 434px;
+    width: 78px;
+    height: 20px;
+  }
 

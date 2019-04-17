@@ -1,6 +1,6 @@
 {
-  "short_name": "My App",
-  "name": "My App",
+  "short_name": "Login Screen",
+  "name": "Login Screen",
   "icons": [
     {
       "src": "apple-touch-icon.png",

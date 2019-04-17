@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 
+// UI framework component imports
+import Container from 'muicss/lib/react/container';
+
 
 export default class StartScreen extends Component {
 
@@ -20,25 +23,24 @@ export default class StartScreen extends Component {
       layoutFlowStyle.overflow = 'hidden';
     }
     
-    const style_background = {
+    const style_elBackground = {
         width: '100%',
         height: '100%',
      };
-    const style_background_outer = {
+    const style_elBackground_outer = {
         backgroundColor: '#f6f6f6',
-        pointerEvents: 'none',
      };
     
     return (
-      <div className="AppScreen StartScreen" style={baseStyle}>
+      <Container fluid={true} className="AppScreen StartScreen" style={baseStyle}>
         <div className="background">
-          <div className='appBg containerMinHeight elBackground' style={style_background_outer}>
-            <div style={style_background} />
+          <div className='appBg containerMinHeight elBackground' style={style_elBackground_outer}>
+            <div style={style_elBackground} />
           
           </div>
           
         </div>
-      </div>
+      </Container>
     )
   }
   
