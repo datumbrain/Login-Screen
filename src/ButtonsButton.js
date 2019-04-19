@@ -18,7 +18,7 @@ export default class ButtonsButton extends Component {
         backgroundSize: '100% 100%',
      };
     const style_elLogin = {
-        fontSize: 11.8,
+        fontSize: 15.2,
         color: 'white',
         textAlign: 'center',
      };

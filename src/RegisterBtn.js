@@ -18,7 +18,7 @@ export default class RegisterBtn extends Component {
         backgroundSize: '100% 100%',
      };
     const style_elRegitser = {
-        fontSize: 11.8,
+        fontSize: 15.2,
         color: '#e41d25',
         textAlign: 'center',
      };
